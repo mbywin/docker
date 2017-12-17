@@ -1,0 +1,16 @@
+version: '2'
+services:
+   oamapp:
+     image: oamapp:latest
+     restart: always
+     ports:
+       - 7001:6000
+     networks:
+      - oam
+     volumes:
+       - ./config:/app/config
+       - ./logs:/app/logs
+
+networks:
+  oam:
+    external: true
